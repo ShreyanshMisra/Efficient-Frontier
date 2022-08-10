@@ -1,0 +1,12 @@
+requests
+re
+numpy
+BeautifulSoup
+time
+os
+pandas
+pickle
+datetime
+pandas_datareader
+scipy
+plotly
