@@ -9,4 +9,4 @@ pickle
 datetime
 pandas_datareader
 scipy
-plotly
+matplotlib
