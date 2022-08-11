@@ -1,1 +1,1 @@
-ameritrade = 'YOUR_API_KEY'
+ameritrade = 'YOUR AMERITRADE API KEY'
