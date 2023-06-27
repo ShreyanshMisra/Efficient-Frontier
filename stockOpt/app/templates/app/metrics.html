@@ -1,0 +1,31 @@
+{% if stockData %}
+<div class="heading">
+    <h1>{{ stockData.stock }}</h1>    
+    <h2>{{ stockData.description }}</h2>
+    <h2>{{ stockData.exchange }}</h2>
+    <h2>$ {{ stockData.close }}</h2>
+</div>
+
+<div class="metrics">
+    <div class="peRatio">
+        <h2>Price-to-Equity Ratio</h2>
+        <h3>{{ stockData.peRatio }}</h3>
+    </div>
+    <div class="returnOnEquity">
+        <h2>Return on Equity</h2>
+        <h3>{{ stockData.returnOnEquity }}</h3>
+    </div>
+    <div class="high52">
+        <h2>52-Week High</h2>
+        <h3>{{ stockData.high52 }}</h3>
+    </div>
+    <div class="netProfitMarginTTM">
+        <h2>Net Profit Margin (TTM)</h2>
+        <h3>{{ stockData.netProfitMarginTTM }}</h3>
+    </div>
+    <div class="epsTTM">
+        <h2>Earnings per Share (TTM)</h2>
+        <h3>{{ stockData.epsTTM }}</h3>
+    </div>
+</div>
+{% endif %}

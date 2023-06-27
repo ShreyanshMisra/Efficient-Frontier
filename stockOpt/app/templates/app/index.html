@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="UTF-8">
+        <title>StockOpt - Compare Stock Metrics & Optimize a Portfolio!</title>
+    </head>
+
+    <body>
+        <form method="post">
+            {% csrf_token %}
+            <input type="text" name="stock1" placeholder="Enter stock 1">
+            <input type="text" name="stock2" placeholder="Enter stock 2">
+            <input type="text" name="stock3" placeholder="Enter stock 3">
+
+            <button type="submit" name="compare">Compare Stocks</button>
+            <button type="submit" name="optimize">Optimize Portfolio</button>
+            
+        </form>
+
+        <div class="comparison-container">
+            {% if stockData1 %}
+            <div class="stock1">
+                {% include 'app/metrics.html' with stockData=stockData1 %}
+            </div>
+            {% endif %}
+
+            {% if stockData2 %}
+            <div class="stock2">
+                {% include 'app/metrics.html' with stockData=stockData2 %}
+            </div>
+            {% endif %}
+
+            {% if stockData3 %}
+            <div class="stock3">
+                {% include 'app/metrics.html' with stockData=stockData3 %}
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="optimization-container">
+            {% if stockData1 and stockData2 and stockData3 %}
+            <div class="peformance">
+                {% include 'app/optimize.html' with results=results %}
+            </div>
+            <div class="cleaned_weights">
+                {% include 'app/optimize.html' with results=results %}
+            </div>
+            {% endif %}
+        </div>
+
+
+    </body>
+
+</html>
